@@ -17,10 +17,8 @@ var permute = function(nums) {
             return
         }
         nums.forEach(num => {
-            if (path.includes(num)) continue
-            path.push(num)
-            backTrace(path);
-            path.pop()
+            if (path.includes(num)) return;
+            backTrace(path.concat(num));
         })
     }
     backTrace([])
